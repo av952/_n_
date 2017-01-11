@@ -1,5 +1,6 @@
 package siono.game.android.av.siono;
 
+import android.util.Log;
 import android.widget.ImageView;
 
 import java.util.Random;
@@ -17,28 +18,23 @@ public class Evaluacion {
     public ImageView img;
     private Level_1 level_1 = new Level_1();
 
-    public void Evaluacion(int tam, int cant,ImageView img2){
+
+
+    public  Evaluacion(int tam, int cant){
         tam_arreglo=tam;
         cantidad = cant;
-        img =img2;
 
     }
 
+    public void azar(int tam, int cant,ImageView im){
+        intrandom = random.nextInt(tam_arreglo);
 
-    public void evalua(int tam, int cant,ImageView img2){
-        tam = this.tam_arreglo;
+        if(cant<=tam){
 
-    }
-
-    public void azar(){
-
-       int i= level_1.get_todo();
-
-        intrandom= random.nextInt(tam_arreglo);
-
-        System.out.println(i+intrandom);
+        }
 
     }
+
 
 }
 
