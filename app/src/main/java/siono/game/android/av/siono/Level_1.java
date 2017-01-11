@@ -166,6 +166,7 @@ Comunicacion_niveles{
 
         if(cantidad<= imagenesfruver.length){
             img_preg.setImageResource(array_pregunta[ran1]);//aleatorio para la pregunta
+            img_level_1.setImageResource(imagenesfruver[p1]);
         }
 
 
