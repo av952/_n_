@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/btn_jugar_sp_pres111x66" android:state_pressed="true"></item>
+    <item android:drawable="@drawable/btn_jugar_sp_normal111x66"></item>
+
+
+</selector>
