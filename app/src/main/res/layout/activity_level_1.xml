@@ -27,6 +27,14 @@
             android:layout_weight="1"
             tools:layout="@layout/fragment_frag_home" />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/vidas"
+            android:src="@drawable/vidas2_3"
+            android:paddingTop="10dp"
+            />
+
         <fragment
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
