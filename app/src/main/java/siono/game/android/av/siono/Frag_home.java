@@ -79,6 +79,7 @@ public class Frag_home extends Fragment implements View.OnClickListener {
         onview= inflater.inflate(R.layout.fragment_frag_home, container, false);
 
         btn_home = (ImageView)onview.findViewById(R.id.btn_home);
+        btn_home.setOnClickListener(this);
 
 
         return onview;
