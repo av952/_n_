@@ -4,6 +4,7 @@
     android:id="@+id/activity_level_1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorLevels"
     android:orientation="vertical"
     tools:context="siono.game.android.av.siono.Level_1">
 
@@ -13,6 +14,8 @@
         android:orientation="horizontal"
         android:weightSum="3"
         android:gravity="center"
+        android:background="@color/gris"
+        android:paddingBottom="10dp"
 
         >
 
@@ -23,6 +26,15 @@
             android:id="@+id/fragment"
             android:layout_weight="1"
             tools:layout="@layout/fragment_frag_home" />
+
+        <fragment
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:name="siono.game.android.av.siono.Frag_levels"
+            android:id="@+id/fragment2"
+            android:layout_weight="1"
+            tools:layout="@layout/fragment_frag_levels" />
+
     </LinearLayout>
 
 </LinearLayout>

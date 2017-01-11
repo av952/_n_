@@ -14,13 +14,16 @@ import android.widget.ImageView;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Frag_home.OnFragmentInteractionListener} interface
+ * {@link Frag_levels.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Frag_home#newInstance} factory method to
+ * Use the {@link Frag_levels#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Frag_home extends Fragment implements View.OnClickListener {
+public class Frag_levels extends Fragment implements View.OnClickListener {
 
+
+    private ImageView btn_lvl;
+    private View  onview;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -34,14 +37,7 @@ public class Frag_home extends Fragment implements View.OnClickListener {
 
     private OnFragmentInteractionListener mListener;
 
-    //----------------------------------------------------------------------------------------------
-    private ImageView btn_home;
-    private View onview;
-
-    //----------------------------------------------------------------------------------------------
-
-
-    public Frag_home() {
+    public Frag_levels() {
         // Required empty public constructor
     }
 
@@ -51,11 +47,11 @@ public class Frag_home extends Fragment implements View.OnClickListener {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Frag_home.
+     * @return A new instance of fragment Frag_levels.
      */
     // TODO: Rename and change types and number of parameters
-    public static Frag_home newInstance(String param1, String param2) {
-        Frag_home fragment = new Frag_home();
+    public static Frag_levels newInstance(String param1, String param2) {
+        Frag_levels fragment = new Frag_levels();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -76,12 +72,10 @@ public class Frag_home extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        onview = inflater.inflate(R.layout.fragment_frag_home, container, false);
+        onview= inflater.inflate(R.layout.fragment_frag_levels, container, false);
 
-        btn_home = (ImageView) onview.findViewById(R.id.btn_home);
-        btn_home.setOnClickListener(this);
-
-
+        btn_lvl = (ImageView)onview.findViewById(R.id.btn_levels);
+        btn_lvl.setOnClickListener(this);
         return onview;
     }
 
@@ -111,11 +105,15 @@ public class Frag_home extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+
         switch (v.getId()){
-            case R.id.btn_home:
-                Intent i = new  Intent(getActivity(),Menu.class);// la forma correcta para llamar desde frag
+            case R.id.btn_levels:
+                Intent i = new Intent(getActivity(),Levels_all.class);
                 startActivity(i);
+                break;
         }
+
+
     }
 
     /**

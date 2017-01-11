@@ -5,7 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class Level_1 extends AppCompatActivity implements View.OnClickListener,Frag_home.OnFragmentInteractionListener {
+public class Level_1 extends AppCompatActivity implements View.OnClickListener,
+        Frag_home.OnFragmentInteractionListener,Frag_levels.OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
