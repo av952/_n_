@@ -44,10 +44,11 @@ public class Menu extends AppCompatActivity implements View.OnClickListener,Leve
         flujoDeMusica = sp.load(this,R.raw.click,1);
 
         //FRAGMENT
+        /*
         fragmentManager = getSupportFragmentManager();
         fragTran_Levels = fragmentManager.beginTransaction();
         levels = new Levels();//relaiona el fragmento
-        fragTran_Levels.replace(R.id.contenedorenmain,levels);
+        fragTran_Levels.replace(R.id.contenedorenmain,levels);*/
     }
 
     @Override
@@ -59,7 +60,8 @@ public class Menu extends AppCompatActivity implements View.OnClickListener,Leve
                 break;
             case R.id.btnBegin:
                 sp.play(flujoDeMusica,1,1,0,0,1);
-                fragTran_Levels.commit();
+                Intent i = new Intent(this,Levels_all.class);
+                startActivity(i);
                 break;
             case R.id.btncreditos:
                 sp.play(flujoDeMusica,1,1,0,0,1);
