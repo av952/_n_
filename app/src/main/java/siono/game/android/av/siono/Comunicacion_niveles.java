@@ -12,7 +12,6 @@ public interface Comunicacion_niveles {
 
     int intervalo =2000;//para el metodo onbackpresed
 
-
     //IMAGENES RANDOM-------------------------------------LEVEL_1-----------------------------------
      int[] imagenesfruver ={
             R.drawable.aasparagus256, R.drawable.aaubergine256,
@@ -27,7 +26,6 @@ public interface Comunicacion_niveles {
             R.drawable.bpepper256,R.drawable.bpineapple256,R.drawable.braspberry256,
             R.drawable.bstrawberry256,R.drawable.btomato256, R.drawable.bwatermelon256
     };
-
     //ARRAY VIDAS----------------------------------------------------------------------------------
      int[] arrayvidas={
             R.drawable.vidas2_1,
@@ -35,8 +33,8 @@ public interface Comunicacion_niveles {
             R.drawable.vidas2_3,
     };
 
-    int[]array_pregunta={
-      R.drawable.preg_fruta_188x66,
+     int[]array_pregunta={
+            R.drawable.preg_fruta_188x66,
             R.drawable.preg_verdura_188x66
     };
 
@@ -44,7 +42,7 @@ public interface Comunicacion_niveles {
 
     void evaluacion();//evalua si la respuesta es correcta o no
     void respuestaFinal(int cantbuenas);//muestra imagen segun cantidad de buenas o malas
-    void azar();//calcula al azar la imagen que se muestra
+    void azar(int p1, int  ran1);//calcula al azar la imagen que se muestra
     void fin_juego(int i);
     void onBackPressed();
 }
