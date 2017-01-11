@@ -14,39 +14,13 @@ public class Level_1 extends AppCompatActivity  implements View.OnClickListener,
         Frag_home.OnFragmentInteractionListener,Frag_levels.OnFragmentInteractionListener,
 Comunicacion_niveles{
 
-    //IMAGENES RANDOM-------------------------------------LEVEL_1-----------------------------------
-    /*private int[] imagenesfruver ={
-            R.drawable.aasparagus256, R.drawable.aaubergine256,
-            R.drawable.abeans256, R.drawable.abroccoli256,R.drawable.acabbage256,
-            R.drawable.acarrot256,R.drawable.acauliflower256,
-            R.drawable.achives256, R.drawable.alettuce256,R.drawable.aonion256,R.drawable.apeas256,
-            R.drawable.apumpkin256,R.drawable.asalad256,
-            R.drawable.bapple256,R.drawable.bavocado256,R.drawable.bbanana256,
-            R.drawable.bblueberries256, R.drawable.bcherries256,R.drawable.bcoconut256,
-            R.drawable.bfig256,R.drawable.bgrapes256,
-            R.drawable.blemon256,R.drawable.borange256,R.drawable.bpeach256,R.drawable.bpear256,
-            R.drawable.bpepper256,R.drawable.bpineapple256,R.drawable.braspberry256,
-            R.drawable.bstrawberry256,R.drawable.btomato256, R.drawable.bwatermelon256
-    };
-    //ARRAY VIDAS----------------------------------------------------------------------------------
-    private int[] arrayvidas={
-            R.drawable.vidas2_1,
-            R.drawable.vidas2_2,
-            R.drawable.vidas2_3,
-    };
-
-    private int[]array_pregunta={
-            R.drawable.preg_fruta_188x66,
-            R.drawable.preg_verdura_188x66
-    };*/
-
 
     public ImageView vida,btn_si,btn_no,img_level_1,img_preg;
     public TextView mi_crono;
     private Random random = new Random();
 
     private int op, cantidad;//op=opcion escogida(button),cantidad=cantidad de clicks
-    private int mal,bien,cuantasvidas;
+    private int mal,bien,cuantasvidas,p,ran;
 
     private long tiempoprimerclick;//para el metodo onbacpresed
 
@@ -76,7 +50,8 @@ Comunicacion_niveles{
         //IMG PREGUNTA
         img_preg = (ImageView)findViewById(R.id.preg_fv);
 
-        //instanciar
+        //iniciar
+        azar();
     }
 
     @Override
@@ -87,12 +62,14 @@ Comunicacion_niveles{
                 op=1;
                 cantidad++;
                 evaluacion();
+                azar();
 
                 break;
             case R.id.btnno:
                 op=2;
                 cantidad++;
                 evaluacion();
+                azar();
 
                 break;
         }
@@ -107,13 +84,13 @@ Comunicacion_niveles{
 
     @Override
     public void evaluacion() {
-        int p = random.nextInt(imagenesfruver.length);//da una imagen random
-        int ran = random.nextInt(array_pregunta.length);//pregunta random
+        //int p = random.nextInt(imagenesfruver.length);//da una imagen random
+       // int ran = random.nextInt(array_pregunta.length);//pregunta random
 
         if(p<=12 && op==1 && cantidad<=imagenesfruver.length-1&& ran==1){//verdura/si/?verdura = bien
            // ok.play(flujoDeMusica,1,1,0,0,1);//sp.play(soundID, leftVolume, rightVolume, priority, loop, rate);
             bien++;
-        }else if(p<=12 && op==2 && cantidad<=imagenesfruver.length-1&& ran==1){//verdura/no7verdura/ = mal
+        }else if(p<=12 && op==2 && cantidad<=imagenesfruver.length-1&& ran==1){//verdura/no verdura/ = mal
            // no.play(flujoDeMusica,1,1,0,0,1);
             mal++;
         }else if(p<=12 && op==1 && cantidad<=imagenesfruver.length-1&& ran==0){//verdura/si/fruta = mal
@@ -153,7 +130,7 @@ Comunicacion_niveles{
         }
         vida.setImageResource(arrayvidas[cuantasvidas]);
 
-        azar(p,ran);
+
     }
 
     @Override
@@ -162,14 +139,14 @@ Comunicacion_niveles{
     }
 
     @Override
-    public void azar(int p1,int ran1) {
+    public void azar() {
+        p = random.nextInt(imagenesfruver.length);//da una imagen random
+        ran = random.nextInt(array_pregunta.length);//pregunta random
 
-        if(cantidad<= imagenesfruver.length){
-            img_preg.setImageResource(array_pregunta[ran1]);//aleatorio para la pregunta
-            img_level_1.setImageResource(imagenesfruver[p1]);
+        if(cantidad<= imagenesfruver.length-1){
+            img_preg.setImageResource(array_pregunta[ran]);//aleatorio para la pregunta
+            img_level_1.setImageResource(imagenesfruver[p]);//aleatorio para la imagen
         }
-
-
     }
 
     @Override
