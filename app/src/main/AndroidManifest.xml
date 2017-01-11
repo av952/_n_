@@ -17,8 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Menu"></activity>
-        <activity android:name=".Levels_all"></activity>
+        <activity android:name=".Menu" />
+        <activity android:name=".Levels_all" />
+        <activity android:name=".Level_1"></activity>
     </application>
 
 </manifest>

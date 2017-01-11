@@ -20,7 +20,7 @@
         android:layout_weight="1"
         android:layout_gravity="center"
         android:src="@drawable/btn_frutaverdura_colors"
-        android:id="@+id/imageView"
+        android:id="@+id/btn_level_1"
 
         />
 
