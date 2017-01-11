@@ -6,10 +6,11 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondomain"
     tools:context="siono.game.android.av.siono.Menu">
+
     <FrameLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/conten"
+        android:layout_height="match_parent"
+        android:id="@+id/contenedorenmain"
         >
 
     </FrameLayout>
@@ -56,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/btn_play"
-            android:id="@+id/btnLevels"
+            android:id="@+id/btncreditos"
             android:layout_gravity="center"
             android:layout_marginBottom="30dp"
             android:layout_weight="1"

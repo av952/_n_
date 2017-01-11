@@ -3,6 +3,7 @@ package siono.game.android.av.siono;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.media.SoundPool;
+import android.net.Uri;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +12,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class Menu extends AppCompatActivity implements View.OnClickListener{
+public class Menu extends AppCompatActivity implements View.OnClickListener,Levels.OnFragmentInteractionListener{
 
     ImageView btnbegin,btnhtp,btnlevels;
     public SoundPool sp;
@@ -20,8 +21,9 @@ public class Menu extends AppCompatActivity implements View.OnClickListener{
     private long tiempoprimerclick;
 
     FragmentManager fragmentManager;
-    FragmentTransaction fragmentTransaction;
+    FragmentTransaction fragTran_Levels;
     //Frac_htp frac1;
+    Levels levels;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,7 @@ public class Menu extends AppCompatActivity implements View.OnClickListener{
         //se crea la interfas grafica
         btnbegin =(ImageView) findViewById(R.id.btnBegin);
         btnhtp =(ImageView) findViewById(R.id.btnHtp);
-        btnlevels =(ImageView) findViewById(R.id.btnLevels);
+        btnlevels =(ImageView) findViewById(R.id.btncreditos);
         btnbegin.setOnClickListener(this);
         btnhtp.setOnClickListener(this);
         btnlevels.setOnClickListener(this);
@@ -41,11 +43,11 @@ public class Menu extends AppCompatActivity implements View.OnClickListener{
         this.setVolumeControlStream(AudioManager.STREAM_MUSIC);
         flujoDeMusica = sp.load(this,R.raw.click,1);
 
-        /*//FRAGMENT
+        //FRAGMENT
         fragmentManager = getSupportFragmentManager();
-        fragmentTransaction = fragmentManager.beginTransaction();
-        frac1 = new Frac_htp();//relaiona el fragmento
-        fragmentTransaction.add(R.id.conten,frac1);*/
+        fragTran_Levels = fragmentManager.beginTransaction();
+        levels = new Levels();//relaiona el fragmento
+        fragTran_Levels.add(R.id.contenedorenmain,levels);
     }
 
     @Override
@@ -57,10 +59,9 @@ public class Menu extends AppCompatActivity implements View.OnClickListener{
                 break;
             case R.id.btnBegin:
                 sp.play(flujoDeMusica,1,1,0,0,1);
-                /*Intent ir2 = new Intent(this,Level_1.class);
-                startActivity(ir2);
-                break;*/
-            case R.id.btnLevels:
+                fragTran_Levels.commit();
+                break;
+            case R.id.btncreditos:
                 sp.play(flujoDeMusica,1,1,0,0,1);
                 /*Intent ir3 = new Intent(this,Levels.class);
                 startActivity(ir3);
@@ -82,4 +83,8 @@ public class Menu extends AppCompatActivity implements View.OnClickListener{
     }
 
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
 }
