@@ -47,7 +47,7 @@ public class Menu extends AppCompatActivity implements View.OnClickListener,Leve
         fragmentManager = getSupportFragmentManager();
         fragTran_Levels = fragmentManager.beginTransaction();
         levels = new Levels();//relaiona el fragmento
-        fragTran_Levels.add(R.id.contenedorenmain,levels);
+        fragTran_Levels.replace(R.id.contenedorenmain,levels);
     }
 
     @Override

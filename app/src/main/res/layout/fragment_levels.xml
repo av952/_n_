@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorLevels"
-    android:weightSum="6"
+    android:weightSum="1"
     android:orientation="vertical"
     tools:context="siono.game.android.av.siono.Levels">
 
@@ -15,12 +15,14 @@
         ></LinearLayout>
 
     <ImageView
-        android:layout_height="300dp"
-        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:layout_weight="1"
         android:layout_gravity="center"
         android:src="@drawable/btn_frutaverdura_colors"
-        android:id="@+id/imageView" />
+        android:id="@+id/imageView"
+
+        />
 
 
 </LinearLayout>
