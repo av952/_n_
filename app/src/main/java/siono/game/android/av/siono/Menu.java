@@ -83,6 +83,9 @@ public class Menu extends AppCompatActivity implements View.OnClickListener{
 
 
     public void borrar(){
+        if(1==1){
+            int q= 2;
+        }
 
     }
 }
