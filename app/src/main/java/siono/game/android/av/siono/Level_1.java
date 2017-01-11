@@ -13,6 +13,11 @@ public class Level_1 extends AppCompatActivity implements View.OnClickListener,
     private ImageView vida,btn_si,btn_no;
     private TextView mi_crono;
 
+    private int tam_array;
+
+    //instanciar
+    Evaluacion evaluacion;
+
     //IMAGENES RANDOM-------------------------------------------------------------------------------
     private int[] array_fv={
         R.drawable.aasparagus256, R.drawable.aaubergine256,
@@ -41,16 +46,37 @@ public class Level_1 extends AppCompatActivity implements View.OnClickListener,
         //VIDA
         vida = (ImageView)findViewById(R.id.vidas);
 
+        //instanciar
+        evaluacion = new Evaluacion();
+
 
     }
+    //IMAGENES RANDOM-------------------------------------------------------------------------------
+    private int[] arrayvidas={
+            R.drawable.vidas2_1,
+            R.drawable.vidas2_2,
+            R.drawable.vidas2_3,
+    };
 
     @Override
     public void onClick(View v) {
+
+        switch (v.getId()){
+            case R.id.btnBegin:
+                evaluacion.azar();
+
+        }
 
     }
 
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    public int get_todo(){
+        tam_array=array_fv.length;
+
+        return tam_array;
     }
 }
